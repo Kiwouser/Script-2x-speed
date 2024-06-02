@@ -1,41 +1,11 @@
-# Compiled Lua sources
-luac.out
+-- Script para dobrar a velocidade no jogo Fluxus
+-- Salve este arquivo como speedboost.lua e faça upload para o seu repositório no GitHub
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+-- Dobrando a velocidade de caminhada do personagem
+humanoid.WalkSpeed = humanoid.WalkSpeed * 2
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+print("A velocidade foi dobrada com sucesso!")
